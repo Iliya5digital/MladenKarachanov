@@ -1,0 +1,81 @@
+
+7. Хотелска стая
+Хотел предлага 2 вида стаи: студио и апартамент. Напишете програма, която изчислява цената за целия
+престой за студио и апартамент. Цените зависят от месеца на престоя:
+
+
+
+
+Май и октомври Юни и септември Юли и август
+Студио – 50 лв./нощувка Студио – 75.20 лв./нощувка Студио – 76 лв./нощувка
+Апартамент – 65 лв./нощувка Апартамент – 68.70 лв./нощувка Апартамент – 77 лв./нощувка
+Предлагат се и следните отстъпки:
+ За студио, при повече от 7 нощувки през май и октомври : 5% намаление.
+ За студио, при повече от 14 нощувки през май и октомври : 30% намаление.
+ За студио, при повече от 14 нощувки през юни и септември: 20% намаление.
+ За апартамент, при повече от 14 нощувки, без значение от месеца : 10% намаление.
+Вход
+Входът се чете от конзолата и съдържа точно 2 реда, въведени от потребителя:
+ На първия ред е месецът – May, June, July, August, September или October
+ На втория
+втория ред: “Studio: {цена за целият престой} lv.“
+package programmingBasics;
+
+import java.util.Scanner;
+
+public class HotelRoom {
+    public static void main(String[] args) {
+        Scanner scanner= new Scanner(System.in);
+        // prochitane na vhod
+        String monts=scanner.nextLine();
+        int num=Integer.parseInt(scanner.nextLine());
+        double price=0;
+        double price2=0;
+        double discount=0;
+        //proverki
+        switch(monts) {
+            case "May":
+                price = 50;
+                price2 = 65;
+                if (num > 7 && num < 14) {
+                    discount = price * num * 0.95;
+
+                } else if (num > 14) {
+                    discount = price * num / 0.70;
+                }
+
+                break;
+            case "June":
+                price=75.20;
+                price2=68.70;
+                if (num>14){
+                    discount=price=price*0.70;
+                }
+
+                break;
+            case "July":
+                price=76;
+                price2=77;
+
+            case "August":
+                break;
+            case "September":
+                price=75.20;
+                price2=68.70;
+                if (num>14){
+                    discount=price*0.80;
+                }
+                break;
+            case "October":
+                price=50;
+                price2=65;
+                break;
+        }System.out.printf("Studio: %.2f lv.",price*num);
+    }
+}
+
+
+
+
+
+

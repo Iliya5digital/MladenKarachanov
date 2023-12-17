@@ -1,0 +1,56 @@
+package firstStepsInCoding;
+
+import java.util.Scanner;
+
+public class PastryShop {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String kindCake = scanner.nextLine();
+        int numOrder = Integer.parseInt(scanner.nextLine());
+        int dayOfMonth = Integer.parseInt(scanner.nextLine());
+        double price = 0;
+        double discount = 0;
+        switch (kindCake) {
+            case "Cake":
+                price = 24;
+                break;
+            case "Souffle":
+                price = 6.66;
+                break;
+            case "Baklava":
+                price = 12.60;
+                break;
+        }
+
+
+        if (dayOfMonth >= 15) {
+            switch (kindCake) {
+                case "Cake":
+                    price = 28.70;
+                    break;
+                case "Souffle":
+                    price = 9.80;
+                    break;
+                case "Baklava":
+                    price = 16.98;
+                    break;
+            }
+            if (numOrder >= 100 && numOrder <= 200) {
+                discount = price * 0.15;
+            } else {
+                discount = price * 0.25;
+                if (dayOfMonth <= 15) {
+                    discount = numOrder * 0.10;
+
+                    System.out.printf("%.2f", price * numOrder / discount);
+
+                }
+
+            }
+        }
+    }
+}
+
+
+
+

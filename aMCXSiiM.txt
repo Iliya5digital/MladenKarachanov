@@ -1,0 +1,133 @@
+Алуминиева дограма
+Фирма-производител на алуминиева дограма приема поръчки за изработката и монтаж със следния ценоразпис за един брой. Фирмата приема само поръчки на едро (над 10 бр.). В зависимост от поръчания брой дограми, фирмата прави различна отстъпка на своите клиенти.
+Фирмата предлага също и доставка на поръчките си срещу 60 лв.
+Размер	Единична цена	Отстъпка от цената
+90X130	110 лв.	 Над 30 броя – 5%
+ Над 60 броя – 8%
+100X150	140 лв.	 Над 40 броя – 6%
+   Над 80 броя – 10%
+130X180	190 лв.	 Над 20 броя – 7% 
+   Над 50 броя – 12%
+200X300	250 лв.	 Над 25 броя – 9%
+   Над 50 броя – 14%
+
+
+
+
+
+
+
+Ако поръчката надвишава 99 броя  – върху крайната цена се начисляват допълнителни 4% отстъпка (след като се начисли цената за доставка, ако има такава).
+При поръчка под 10 бр. на конзолата да бъде изписано "Invalid order"
+Вход:
+Потребителят въвежда 3 реда:
+1.	Брой дограми – цяло число в интервала [0..1000];
+2.	Вид на дограмите – текст "90X130" или "100X150" или "130X180" или "200X300";
+3.	Начин на получаване – текст
+•	С доставка - "With delivery" 
+•	Без доставка - "Without delivery"
+Изход:
+Извежда се едно число – стойността на поръчката, в следния формат:
+o	"{Обща стойност на поръчката} BGN"
+Резултатът да се форматира до втори знак след десетичната запетая.
+Примерен вход и изход:
+Вход	Изход	Обяснения
+40 
+90X130
+Without delivery	4180.00 BGN
+	Цената е: 40 бр. * 110 лв. = 4400.00 BGN
+Над 30 броя – 5% отстъпка. 4400 – 5% = 4180.00 BGN
+Without delivery -> не се начислява нищо допълнително.
+105
+100X150
+With delivery	12758.40 BGN	Цената е: 105 бр. * 140 лв. = 14700.00 BGN
+Над 80 броя – 10% отстъпка. 13230.00 BGN
+With delivery - 13230.00 + 60.00 = 13290.00 BGN
+Над 100 броя – 4% отстъпка след доставката = 12758.40 BGN
+
+2
+130X180
+With delivery	Invalid order	Поръчката е под 10 броя.
+
+
+
+
+
+
+package Programmistem.out.println("Invalid order");
+            ngBasicsExam;
+
+import java.util.Scanner;
+
+            public class AluminumJoinery {
+                public static void main(String[] args) {
+                    Scanner scanner = new Scanner(System.in);
+                    int numJoinery = Integer.parseInt(scanner.nextLine());
+                    String typeOfJoinery = scanner.nextLine();
+                    String receiving = scanner.nextLine();
+                    double price = 0;
+                    double discount = 0;
+                    String deliveri = "With delivery";
+                    String notDeliveri = "Without delivery";
+                    if (numJoinery < 10) {
+                        Sy
+        }
+        if (typeOfJoinery.equals("90X130")) {
+            if (numJoinery > 30 && numJoinery <= 60) {
+
+                price = 110 * numJoinery;
+                price = price *0.05-price;
+
+            } else if (numJoinery > 60) {
+                price = 110 * numJoinery;
+                price = price * 0.08 - price;
+
+            }
+        }
+        if (typeOfJoinery.equals("100X150")) {
+            if (numJoinery > 40 && numJoinery <= 80) {
+
+                price = 140 * numJoinery;
+                price = price * 0.06 - price;
+
+            } else if (numJoinery > 80) {
+                price = 140 * numJoinery;
+                price = price * 0.10 - price;
+            }
+        }
+        if (typeOfJoinery.equals("130X180")) {
+            if (numJoinery > 20 && numJoinery <= 50) {
+
+                price = 190 * numJoinery;
+                price = price * 0.07 - price;
+
+            } else if (numJoinery > 50) {
+                price = 190 * numJoinery;
+                price = price * 0.12 - price;
+            }
+
+        }
+        if (typeOfJoinery.equals("200X300")) {
+            if (numJoinery > 25 && numJoinery < 50) {
+                price = 250 * numJoinery;
+                price = price * 0.09 - price;
+
+            } else if (numJoinery > 50) {
+                price = 250 * numJoinery;
+                price = price * 0.14 - price;
+
+            }
+        }
+
+        if (numJoinery > 99) {
+            price = price * 0.04 - price;
+
+
+            System.out.printf("%.2f BGN", price);
+        }
+    }
+}
+
+
+
+

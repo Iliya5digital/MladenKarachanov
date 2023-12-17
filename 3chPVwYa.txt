@@ -1,0 +1,107 @@
+Задача 3. Финален конкурс
+След успешно класиране, група заминава за  финалното състезание. След представянето си всяка група получава парична награда. Тя зависи от: държавата, в която се е провело състезанието; броя точки, които журито е дало и сезонът, през който се е провело състезанието.    
+•	Ако състезанието се е провело в България паричната награда се изчислява като се умножат точките по броя участниците.
+•	Ако се е провело в чужбина – се умножават броя участници по броя точки и към тях се добавя 50% от получената сума. 
+От получената сума се изваждат разходите посочени в проценти спрямо сезона, през който се е провел:
+	Лято	Зима
+България	5%	8%
+Чужбина	10%	15%
+ 
+
+
+
+След завръщането си групата дарява 75% от сумата, след приспаднатите разходи, за благотворителност. Останалата сума се разпределя между членовете на групата.
+Да се  напише програма, която изчислява колко пари са дадени за благотворителност и колко е получил всеки един член на групата. 
+Вход:
+От конзолата се четат 4 реда:
+1.	Брой танцьори – цяло число в интервала [1 … 10]
+2.	Брой точки – реално число в интервала [1.00 … 10000.00]
+3.	Сезон –  текст със следните възможности - "summer" или "winter"
+4.	Място – текст със следните възможности - "Bulgaria" или "Abroad"
+Изход:
+На конзолата се отпечатват 2 реда:
+•	Сумата, която са дали за благотворителност
+"Charity - {сума за благотворителност}"
+•	Сумата, която е получил всеки танцьор
+"Money per dancer - {сума за танцьор}"
+Сумите да бъдат форматирани до втория знак след десетичната запетая.
+Примерен вход и изход:
+Вход	Изход	Обяснение
+1
+89.5
+summer
+Abroad	Charity - 90.62
+Money per dancer - 30.21	Спечелена сума: 1 танцьор * 89.50 = 89.50
+Състезанието се е провело в чужбина => 89.50 + 50% = 134.25
+Разходите са 10% => защото сезонът е лято (summer) и състезанието е в чужбина (Abroad)
+Пари след разходите: 134.25 – 10% = 120.825 
+Пари за благотворителност: 75% от 120.825 = 90.61875 
+Останали пари: 120.825 - 90.61875 = 30.20625 
+Пари за танцьори: 30.20625 / 1 = 30.20625
+25
+98
+winter
+Bulgaria	Charity - 1690.50
+Money per dancer - 22.54	Спечелена сума от състезание в България: 25 танцьора * 98 = 2450
+Разходите са 8% => защото сезонът е зима (winter) и държавата е България (Bulgaria)
+Пари след разходите: 2450 –  8% = 2254
+Пари за благотворителност: 75% от 2254 = 1690.5 
+Останали пари: 2254 - 1690.5 = 563.50
+Пари за танцьори: 563.50 / 25 = 22.54
+
+
+
+
+package firstStepsInCoding;
+
+import java.util.Scanner;
+
+public class FinalCompetition {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int numberOfDancers = Integer.parseInt(scanner.nextLine());
+        double numberOfPoints = Double.parseDouble(scanner.nextLine());
+        String season = scanner.nextLine();
+        String place = scanner.nextLine();
+        double reward = 0;
+        double costs=0;
+        double result=0;
+        double charity=0;
+        if (season.equals("summer")) {
+            if (place.equals("Bulgaria")) {
+                reward = numberOfDancers * numberOfPoints;
+                costs=reward*5/100;
+                result=reward-costs;
+                charity=result*75/100;
+
+            } else if (place.equals("Abroad")) {
+                reward = numberOfDancers * numberOfPoints + (numberOfDancers * numberOfPoints / 2);
+                costs=reward*10/100;
+                result=reward-costs;
+                charity=result*75/100;
+
+            }
+        }
+        if (season.equals("winter")) {
+
+            if (place.equals("Bulgaria")) {
+                reward = numberOfDancers * numberOfPoints;
+                costs = reward * 8 / 100;
+                result = reward - costs;
+                charity = result * 75 / 100;
+
+
+            } else if (place.equals("Abroad")) {
+                reward = numberOfDancers * numberOfPoints + (numberOfDancers * numberOfPoints / 2);
+                costs = reward * 15 / 100;
+                result = reward - costs;
+                charity = result * 75 / 100;
+
+            }
+        }
+        double diff=Math.abs(result-charity);
+        System.out.printf("Charity - %.2f%n",charity);
+        System.out.printf("Money per dancer - %.2f",diff/numberOfDancers);
+    }
+    }
+

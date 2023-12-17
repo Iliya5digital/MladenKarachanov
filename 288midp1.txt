@@ -1,0 +1,49 @@
+7.	Работно време
+Да се напише програма, която чете час от денонощието(цяло число) и ден от седмицата(текст) - въведени от потребителя и проверява дали офисът на фирма е отворен, като работното време на офисът е от 10-18 часа, от понеделник до събота включително
+Примерен вход и изход
+вход	изход		вход	изход	 	вход	изход
+11
+Monday	open		19
+Friday	closed		11
+Sunday	closed
+
+
+package programmingBasics;
+
+import java.util.Scanner;
+
+public class WorkingHours {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int hoursOfDay = Integer.parseInt(scanner.nextLine());
+        String day = scanner.nextLine();
+        if (hoursOfDay >= 10 && hoursOfDay <= 18) {
+            if (!day.equals("Sunday")) {
+
+                System.out.println("open");
+            }
+            }else if ( hoursOfDay >18 ){
+
+            System.out.println("closed");
+
+        }if (day.equals("Sunday")){
+            System.out.println("closed");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

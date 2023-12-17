@@ -1,0 +1,33 @@
+package firstStepsInCoding.MoreExercises.Godzillavs;
+
+import java.util.Scanner;
+
+public class Kong {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double budget = Double.parseDouble(scanner.nextLine());
+        int numExtras = Integer.parseInt(scanner.nextLine());
+        double priceUniform = Double.parseDouble(scanner.nextLine());
+        double decor = budget * 10 / 100;
+        double sumUniform = numExtras * priceUniform;
+        double discount = 0;
+        double sumFilm = decor + sumUniform;
+        double money = budget - sumFilm;
+        if (numExtras > 150) {
+            sumUniform = sumUniform - sumUniform * 0.1;
+
+        }
+        double result = decor + sumUniform;
+
+
+        if (result > budget) {
+            System.out.println("Not enough money!");
+            System.out.printf("Wingard needs %.2f leva more.", result-budget);
+
+        } else {
+            System.out.println("Action!");
+            System.out.printf("Wingard starts filming with %.2f leva left.", budget - result);
+        }
+    }
+
+}

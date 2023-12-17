@@ -1,0 +1,31 @@
+package firststepsincoding.Godzillavs;
+
+import java.util.Scanner;
+
+public class Godzilla.vsKong {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double budjet = Double.parseDouble(scanner.nextLine());
+        int numstatic = Integer.parseInt(scanner.nextLine());
+        double priceonestatic = Double.parseDouble(scanner.nextLine());
+        double decor = budjet / 10;
+        double sumclothes = numstatic * priceonestatic;
+        double result = decor + sumclothes;
+        double totalsum = budjet - result;
+        if (numstatic > 150) {
+            sumclothes = sumclothes - sumclothes * 0.10;
+
+        }
+        double finish = sumclothes + decor;
+        double totalresult = budjet - finish;
+
+        if (sumclothes + decor <= budjet) {
+            System.out.println("Action!");
+            System.out.printf("Wingard starts filming with %.02f leva left.", totalresult);
+        } else if (sumclothes + decor > budjet) {
+
+            System.out.println("Not enough money!");
+            System.out.printf("Wingard needs %.02f leva more.", finish-budjet);
+        }
+    }
+}

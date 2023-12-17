@@ -1,0 +1,53 @@
+package firstStepsInCoding;
+
+import java.util.Scanner;
+
+public class FinalCompetition {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int numberOfDancers = Integer.parseInt(scanner.nextLine());
+        double numberOfPoints = Double.parseDouble(scanner.nextLine());
+        String season = scanner.nextLine();
+        String place = scanner.nextLine();
+        double reward = 0;
+        double costs=0;
+        double result=0;
+        double charity=0;
+        if (season.equals("summer")) {
+            if (place.equals("Bulgaria")) {
+                reward = numberOfDancers * numberOfPoints;
+                costs=reward*5/100;
+                result=reward-costs;
+                charity=result*75/100;
+
+            } else if (place.equals("Abroad")) {
+                reward = numberOfDancers * numberOfPoints + (numberOfDancers * numberOfPoints / 2);
+                costs=reward*10/100;
+                result=reward-costs;
+                charity=result*75/100;
+
+            }
+        }
+        if (season.equals("winter")) {
+
+            if (place.equals("Bulgaria")) {
+                reward = numberOfDancers * numberOfPoints;
+                costs = reward * 8 / 100;
+                result = reward - costs;
+                charity = result * 75 / 100;
+
+
+            } else if (place.equals("Abroad")) {
+                reward = numberOfDancers * numberOfPoints + (numberOfDancers * numberOfPoints / 2);
+                costs = reward * 15 / 100;
+                result = reward - costs;
+                charity = result * 75 / 100;
+
+            }
+        }
+        double diff=Math.abs(result-charity);
+        System.out.printf("Charity - %.2f%n",charity);
+        System.out.printf("Money per dancer - %.2f",diff/numberOfDancers);
+    }
+    }
+

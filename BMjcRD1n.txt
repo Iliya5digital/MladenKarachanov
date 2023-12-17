@@ -1,0 +1,119 @@
+package programmingBasics;
+
+import java.util.Scanner;
+
+public class CatLife {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String breed = scanner.nextLine();
+        String symbol = scanner.nextLine();
+        int oneCatMonth = 6;
+        int oneYears = 12;
+        int years = 0;
+        if (symbol.equals("m")) {
+            //         if (breed.equals("British Shorthair")) {
+            //             years = 13 * oneYears / 6;
+            //         } else if (breed.equals("Siamese")) {
+            //             years = 15 * oneYears / 6;
+            //        } else if (breed.equals("Persian"))
+            //             years = 14 * oneYears / 6;
+            //      } else if (breed.equals("Ragdoll")) {
+            //           years = 16 * oneYears / 6;
+            //       } else if (breed.equals("American Shorthair")) {
+
+            //          years = 12 * oneYears / 6;
+            //      } else if (breed.equals("Siberian")) {
+
+            //         years = 11 * oneYears / 6;
+            //       }
+            //           System.out.printf("%d cat months", years);
+            //       }
+//    }
+
+
+            //    if (symbol.equals("f")){
+            //       switch (breed) {
+            //           case "British Shorthair":
+            //              years = 14 * oneYears / 6;
+            //              break;
+            //          case "Siamese":
+            //              years = 16 * oneYears / 6;
+            //              break;
+            //          case "Persian":
+            //             years = 15 * oneYears / 6;
+            //             break;
+            //        case "Ragdoll":
+            //           years = 17 * oneYears / 6;
+            //            break;
+            //       case "American Shorthair":
+            //           years = 13 * oneYears / 6;
+            //          break;
+            //      case "Siberian":
+            //          years = 12 * oneYears / 6;
+
+            //          break;
+            //       default:
+
+            //      }System.out.println();
+            //     System.out.printf("%d cat months",years);
+
+            // }
+            //
+            if (symbol.equals("m")) {
+                switch (breed) {
+                    case "British Shorthair":
+                        years = 13 * oneYears / 6;
+
+                        break;
+                    case "Siamese":
+                        years = 15 * oneYears / 6;
+
+                        break;
+                    case "Persian":
+                        years = 14 * oneYears / 6;
+                        break;
+                    case "Ragdoll":
+                        years = 16 * oneYears / 6;
+                        break;
+                    case "American Shorthair":
+                        years = 12 * oneYears / 6;
+                        break;
+                    case "Siberian":
+                        years = 11 * oneYears / 6;
+                        break;
+                }
+
+                        System.out.printf(" cat months %d", years);
+
+
+                }
+            }
+
+                    if (symbol.equals("f")) {
+                        switch (breed) {
+                            case "British Shorthair":
+                                years = 14 * oneYears / 6;
+                                break;
+                            case "Siamese":
+                                years = 16 * oneYears / 6;
+                                break;
+                            case "Persian":
+                                years = 15 * oneYears / 6;
+                                break;
+                            case "Ragdoll":
+                                years = 17 * oneYears / 6;
+                                break;
+                            case "American Shorthair":
+                                years = 13 * oneYears / 6;
+                                break;
+                            case "Siberian":
+                                years = 12 * oneYears / 6;
+                                break;
+                        }
+                                System.out.printf(" cat months %d", years);
+                        }
+                    }
+                }
+
+
+

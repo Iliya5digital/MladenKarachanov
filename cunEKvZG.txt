@@ -1,0 +1,14 @@
+package programmingBasics;
+
+import java.util.Scanner;
+
+public class TrapeziodArea {
+    public static void main(String[] args) {
+        Scanner scanner= new Scanner(System.in);
+        int b =Integer.parseInt(scanner.nextLine());
+        int b1=Integer.parseInt(scanner.nextLine());
+        int h =Integer.parseInt(scanner.nextLine());
+        int area=(b+b1)*h/2;
+        System.out.printf("%.2d",area));
+    }
+}

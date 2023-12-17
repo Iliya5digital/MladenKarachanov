@@ -1,0 +1,79 @@
+
+package programmingBasics;
+
+import java.util.Scanner;
+
+public class AluminumJoinery {
+
+
+                public static void main(String[] args) {
+                    Scanner scanner = new Scanner(System.in);
+                    int numJoinery = Integer.parseInt(scanner.nextLine());
+                    String typeOfJoinery = scanner.nextLine();
+                    String receiving = scanner.nextLine();
+                    double price = 0;
+                    double discount = 0;
+                    String deliveri = "With delivery";
+                    String notDeliveri = "Without delivery";
+                    if (numJoinery < 10) {
+
+        }
+        if (typeOfJoinery.equals("90X130")) {
+            if (numJoinery > 30 && numJoinery <= 60) {
+
+                price = 110 * numJoinery;
+                price = price *0.05-price;
+
+            } else if (numJoinery > 60) {
+                price = 110 * numJoinery;
+                price = price * 0.08 - price;
+
+            }
+        }
+        if (typeOfJoinery.equals("100X150")) {
+            if (numJoinery > 40 && numJoinery <= 80) {
+
+                price = 140 * numJoinery;
+                price = price * 0.06 - price;
+
+            } else if (numJoinery > 80) {
+                price = 140 * numJoinery;
+                price = price * 0.10 - price;
+            }
+        }
+        if (typeOfJoinery.equals("130X180")) {
+            if (numJoinery > 20 && numJoinery <= 50) {
+
+                price = 190 * numJoinery;
+                price = price * 0.07 - price;
+
+            } else if (numJoinery > 50) {
+                price = 190 * numJoinery;
+                price = price * 0.12 - price;
+            }
+
+        }
+        if (typeOfJoinery.equals("200X300")) {
+            if (numJoinery > 25 && numJoinery < 50) {
+                price = 250 * numJoinery;
+                price = price * 0.09 - price;
+
+            } else if (numJoinery > 50) {
+                price = 250 * numJoinery;
+                price = price * 0.14 - price;
+
+            }
+        }
+
+        if (numJoinery > 99) {
+            price = price * 0.04 - price;
+
+
+            System.out.printf("%.2f BGN", price);
+        }
+    }
+}
+
+
+
+

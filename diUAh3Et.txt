@@ -1,0 +1,27 @@
+package firstStepsInCoding;
+
+import java.util.Scanner;
+
+public class Repainting {
+    public static void main(String[] args) {
+        Scanner scanner= new Scanner(System.in);
+        int nylon=Integer.parseInt(scanner.nextLine());
+        int paint=Integer.parseInt(scanner.nextLine());
+        int thinner=Integer.parseInt(scanner.nextLine());
+        int hours=Integer.parseInt(scanner.nextLine());
+        double priceNylon=1.50;
+        double pricePaint=14.50;
+        double priceThinner=5.00;
+        double bags=0.40;
+
+        double totalNylon=(nylon+2)*priceNylon;
+        double totalPaint=(paint*0.1+paint)*pricePaint;
+        double totalThinner=thinner*priceThinner;
+        double result=totalPaint+totalNylon+totalThinner+bags;
+        double costs=result*0.3*hours;
+        double finish=costs+result;
+
+        System.out.println(finish);
+
+    }
+}

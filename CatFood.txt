@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class CatFood {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int cats = Integer.parseInt(scanner.nextLine());
+        double food = Double.parseDouble(scanner.nextLine());
+        double price = 0;
+        for (int i = 1; i <= cats; i++) {
+            int curentNum = Integer.parseInt(scanner.nextLine());
+            if (food >= 100 && food < 200) {
+                price = food * 12.45;
+
+
+            } else if (food >= 200 && food < 300) {
+
+                price = food * 12.45;
+
+
+
+                    if (food <= 300 && food < 400) {
+
+                        price = 12.45;
+
+                    }
+                    }
+                    System.out.printf("Price for food per day: %.2f lv.");
+                }
+            }
+        }
+
+

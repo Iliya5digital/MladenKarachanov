@@ -1,0 +1,51 @@
+package nestedConditionalStatements;
+
+import java.util.Scanner;
+
+public class OperationsBetweenNumbers {
+    public static void main(String[] args) {
+        Sca
+
+
+        if ("+".equals(operator)) {
+            result = N1 + N2;
+            if (result % 2 == 0) {
+                System.out.printf("%d + %d = %d - even", N1, N2, result);
+            } else {
+                System.out.printf("%d + %d = %d - odd", N1, N2, result);
+            }
+        } else if ("-".equals(operator)) {
+            result = N1 + N2;
+            if (result % 2 == 0) {
+                System.out.printf("%d - %d = %d - even", N1, N2, result);
+            } else {
+                System.out.printf("%d - %d = %d - odd", N1, N2, result);
+            }
+        } else if ("*".equals(operator)) {
+            result = N1 * N2;
+            if (result % 2 == 0) {
+                System.out.printf("%d * %d = %d - even", N1, N2, result);
+            } else {
+                System.out.printf("%d * %d = %d - odd", N1, N2, result);
+            }
+        } else if ("/".equals(operator)) {
+            result = N1 / N2 ;
+            if (N2 != 0) {
+                System.out.printf("%d / %d = %.2f", N1, N2, result);
+            } else {
+                System.out.printf("Cannot divide %d by zero", N1);
+            }
+        } else if ("%".equals(operator)) {
+            result = N1 % N2;
+            if (N2 != 0) {
+                System.out.printf("%d %% %d = %d", N1, N2, result);
+            } else {
+                System.out.printf("Cannot divide %d by zero", N1);
+            }
+        }
+
+        System.out.println(result);
+
+
+    }
+}

@@ -1,0 +1,152 @@
+Основи на програмирането"
+Задача 3. Компютърна зала
+В най-голямата компютърна зала в България цените варират поради голямата посещаемост. Таксите на залата са в зависимост от това дали е ден или нощ, както и месецът,  в който се посещава залата. Цените са следните:
+	Март до Май	Юни до Август
+ Ден	10.50 лв/ч	12.60 лв/ч
+ Нощ	8.40 лв/ч	10.20 лв/ч
+Предлагат се и следните отстъпки в следната последователност:
+•	За група от четирима или повече човека, цената на човек се намаля с 10%
+•	За 5 или повече часа прекарани, цената на човек се намаля с 50%
+Да се напише програма, която изчислява цената на човек за час и общата сума.
+Вход:
+Входът се чете от конзолата и съдържа точно 4 реда:
+•	На първия ред - месецът - текст с възможности: "march", "april", "may", "june", "july", "august"
+•	На втория ред - броят на прекараните часове - цяло число в диапазона [1...10]
+•	На третия ред - броят на хората в групата -  цяло число в диапазона [1...10]
+•	На четвъртия ред - времето от деня – текст с възможности: "day" или "night"
+Изход:
+Да се отпечатат на конзолата 2 реда:
+•	На първия ред: "Price per person for one hour: {цена на човек за час}"
+•	На втория ред: "Total cost of the visit: {общата цена}"
+Цените да бъдат форматирани до втория знак след десетичната запетая.
+
+Примерен вход и изход:
+
+
+
+
+
+
+
+
+
+package programmingBasics;
+
+import java.util.Scanner;
+
+public class ComputerRoom {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String month = scanner.nextLine();
+        int hours = Integer.parseInt(scanner.nextLine());
+        int people = Integer.parseInt(scanner.nextLine());
+        String time = scanner.nextLine();
+        double price = 0;
+        double priceCount = 0;
+        if (time.equals("day")) {
+            if (month.equals("march")) {
+                price = 10.50;
+                priceCount = price * people * hours;
+                System.out.printf("Price per person for one hour: %.2f %n", price);
+                System.out.printf("Total cost of the visit: %.2f", priceCount);
+
+
+            } else if (month.equals("april")) {
+                price = 10.50;
+                priceCount = price * people * hours;
+                System.out.printf("Price per person for one hour: %.2f %n", price);
+                System.out.printf("Total cost of the visit: %.2f", priceCount);
+            } else if (month.equals("may")) {
+                price = 10.50;
+                priceCount = price * people * hours;
+                System.out.printf("Price per person for one hour: %.2f %n", price);
+                System.out.printf("Total cost of the visit: %.2f", priceCount);
+
+            }
+            if (time.equals("night")) {
+                if (month.equals("march")) {
+                    price = 8.40;
+                    priceCount = price * people * hours;
+                    System.out.printf("Price per person for one hour: %.2f %n", price);
+                    System.out.printf("Total cost of the visit: %.2f", priceCount);
+                } else if (month.equals("april")) {
+                    price = 8.40;
+                    priceCount = price * people * hours;
+                } else if (month.equals("may")) {
+                    price = 8.40;
+                    priceCount = price * people * hours;
+                }
+                if (time.equals("day")) {
+                    if (month.equals("june")) {
+                        price = 12.60;
+                        priceCount = price * people * hours;
+                        System.out.printf("Price per person for one hour: %.2f %n", price);
+                        System.out.printf("Total cost of the visit: %.2f", priceCount);
+                    } else if (month.equals("july")) {
+                        price = 12.60;
+                        priceCount = price * people * hours;
+                        System.out.printf("Price per person for one hour: %.2f %n", price);
+                        System.out.printf("Total cost of the visit: %.2f", priceCount);
+                    } else if (month.equals("august")) {
+                        price = 12.60;
+                        priceCount = price * people * hours;
+                        System.out.printf("Price per person for one hour: %.2f %n", price);
+                        System.out.printf("Total cost of the visit: %.2f", priceCount);
+
+                    }
+                    if (time.equals("night")) {
+                        if (month.equals("june")) {
+                            ;
+                            price = 10.20;
+                            priceCount = price * people * hours;
+                            System.out.printf("Price per person for one hour: %.2f %n", price);
+                            System.out.printf("Total cost of the visit: %.2f", priceCount);
+                        } else if (month.equals("july")) {
+                            price = 10.20;
+                            priceCount = price * people * hours;
+                            System.out.printf("Price per person for one hour: %.2f %n", price);
+                            System.out.printf("Total cost of the visit: %.2f", priceCount);
+                        } else if (month.equals("august")) {
+                            price = 10.20;
+                            priceCount = price * people * hours;
+                            System.out.printf("Price per person for one hour: %.2f %n", price);
+                            System.out.printf("Total cost of the visit: %.2f", priceCount);
+                        }
+
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+package programmingBasics;
+
+import java.util.Scanner;
+
+public class Spaceship {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double width = Double.parseDouble(scanner.nextLine());
+        double length = Double.parseDouble(scanner.nextLine());
+        double height = Double.parseDouble(scanner.nextLine());
+        double heightAstronauts = Double.parseDouble(scanner.nextLine());
+        double sum = width * length * height;
+        double volumeRoom = (heightAstronauts + 0.40) * 2 * 2;
+        double placeFor = Math.floor(sum / volumeRoom);
+
+        if (placeFor >= 3 && placeFor <= 10) {
+            System.out.printf("The spacecraft holds %.0f astronauts.", placeFor);
+        } else if (placeFor < 3) {
+            System.out.printf("The spacecraft is too small.",placeFor);
+        } else if(placeFor>10){
+            System.out.printf("The spacecraft is too big.",placeFor);
+
+
+        }
+    }
+
+}
